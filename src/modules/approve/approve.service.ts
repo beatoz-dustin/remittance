@@ -53,8 +53,6 @@ export class ApproveService {
     );
 
     await this.httpBridgeService.sendLog(message, action, why, inputMessage);
-    await this.httpBridgeService.sendAudit(message, action, why, inputMessage);
-
     const downstreamResponse = await this.httpBridgeService.postService<{
       service: string;
       action: string;
